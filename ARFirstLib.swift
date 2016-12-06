@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ARFirstLib {
+public class ARFirstLib {
     static func ar1_print(name: String) {
         print(name)
     }
