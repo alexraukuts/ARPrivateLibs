@@ -18,5 +18,8 @@ Pod::Spec.new do |s|
   s.source          = { :git => "https://github.com/alexraukuts/ARPrivateLibs.git", :tag => "#{s.version}" }
   s.source_files    = "*"
   s.exclude_files   = "Classes/Exclude"
+  s.pod_target_xcconfig =  {
+    'SWIFT_VERSION' => '3.0',
+  }
 
 end
