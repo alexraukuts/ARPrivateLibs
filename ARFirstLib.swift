@@ -9,7 +9,7 @@
 import Foundation
 
 public class ARFirstLib {
-    static func ar1_print(name: String) {
+    static public func ar1_print(name: String) {
         print(name)
     }
 }
