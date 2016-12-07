@@ -3,17 +3,17 @@
 # @name 	- prebuild_script.sh
 # @abstract - This script runs as a pre build step and will expand the zipped PolarisOfficeFramework and PSPDFKit framework files
 # @output 	- unzipped PolarisOfficeFramework & PSPDFKit files
-# @loginfo 	- polaris_prebuild_script.log
+# @loginfo 	- prebuild_script.log
 #
 
 echo "######################################################################### SCRIPT STARTS - $(date) #########################################################################"
 echo
-echo "Starting polaris_prebuild_script.sh at $(date)"
+echo "Starting prebuild_script.sh at $(date)"
 echo
 echo
 
 pwd
-echo "${PROJECT_DIR}"
+echo "./"
 
 if [ -f prebuild_script.sh ]; then
 	echo "Shell script found"
@@ -22,10 +22,10 @@ else
 fi
 
 # unzip the Polaris framework
-cd "${PROJECT_DIR}/Polaris/"
+cd "./Polaris"
 OUTPUTCODE=$?
 if [[ ${OUTPUTCODE} -ne 0 ]]; then
-	echo "Unable to find directory at location - ${PROJECT_DIR}/Polaris"
+	echo "Unable to find directory at location - /Polaris"
 	echo "Terminating prebuild script with error code ${OUTPUTCODE} at $(date)"
 	exit 1
 fi
@@ -43,6 +43,6 @@ fi
 # mark script completion
 echo
 echo
-echo "Completed polaris_prebuild_script.sh at $(date)"
+echo "Completed prebuild_script.sh at $(date)"
 echo
 echo "######################################################################### SCRIPT ENDS - $(date) #########################################################################"
