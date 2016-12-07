@@ -18,25 +18,14 @@ Pod::Spec.new do |s|
     }
     s.author = "Alex"
     s.source = { :git => "https://github.com/alexraukuts/ARPrivateLibs.git", :tag => "#{s.version}" }
-#s.source_files = "*"
     s.exclude_files = "Classes/Exclude"
 
-#s.subspec 'ARFirstLib' do |l1|
-#       l1.source_files = 'ARFirstLib/*'
-#    end
+    s.prepare_command = './prebuild_script.sh > PRE-BUILD_OUTPUT.log'
 
-#s.subspec 'Polaris' do |l2|
-
-
-s.prepare_command = './prebuild_script.sh > PRE-BUILD_OUTPUT.log'
-
-
-
-
-
-        s.source_files = 'Polaris/PolarisOfficeSDK.framework/Versions/A/Headers/*.h'
-        s.vendored_frameworks = 'Polaris/PolarisOfficeSDK.framework'
-        s.frameworks =
+    s.source_files = 'Polaris/PolarisOfficeSDK.framework/Versions/A/Headers/*.h'
+    s.resources = 'Polaris/*.{bundle,plist}'
+    s.vendored_frameworks = 'Polaris/PolarisOfficeSDK.framework'
+    s.frameworks =
                     'SystemConfiguration',
                     'Security',
                     'CoreTelephony',
@@ -54,12 +43,10 @@ s.prepare_command = './prebuild_script.sh > PRE-BUILD_OUTPUT.log'
                     'QuartzCore',
                     'Foundation',
                     'AssetsLibrary'
-        s.library = 'sqlite3',
+    s.library = 'sqlite3',
                     'z',
                     'xml2',
                     'c++'
-#s.xcconfig = {  'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/Polaris"',
-#                        'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/Polaris"' }
-        s.resources = 'Polaris/*.{bundle,plist}'
-#    end
+    s.xcconfig = {  'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/Polaris"',
+                    'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/Polaris"' }
 end
