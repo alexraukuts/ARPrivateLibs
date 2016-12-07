@@ -22,10 +22,10 @@ else
 fi
 
 # unzip the Polaris framework
-cd "${PROJECT_DIR}/syncplicity/Frameworks/Polaris"
+cd "${PROJECT_DIR}/Polaris/"
 OUTPUTCODE=$?
 if [[ ${OUTPUTCODE} -ne 0 ]]; then
-	echo "Unable to find directory at location - ${PROJECT_DIR}/syncplicity/Frameworks/Polaris"
+	echo "Unable to find directory at location - ${PROJECT_DIR}/Polaris"
 	echo "Terminating prebuild script with error code ${OUTPUTCODE} at $(date)"
 	exit 1
 fi
