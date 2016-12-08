@@ -47,6 +47,6 @@ Pod::Spec.new do |s|
                     'z',
                     'xml2',
                     'c++'
-    s.xcconfig = {  'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/Polaris"',
-                    'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/Polaris"' }
+#s.xcconfig = {  'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/Polaris"',
+#                   'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/Polaris"' }
 end
